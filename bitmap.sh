@@ -48,7 +48,7 @@ function Ports(){
                 do
                         count=$((count+1))
                         echo -en "\r${blue}[$count/65535]${end}"
-                        /bin/bash -c "echo '' > /dev/tcp/$ip/$p" &>/dev/null && echo -e "\r${green}[+] $p open${end}" && echo "" | /usr/bin/netcat -v -w 1 $ip $p 2>&1 | /usr/bin/grep -I -E "open|Connection refused" | /usr/bin/awk '{print $4}' && echo ""
+                        /bin/bash -c "echo '' > /dev/tcp/$ip/$p" &>/dev/null && echo -e "\r${green}[+] $p open${end}" && echo "" | /usr/bin/nc.traditional -v -w 1 $ip $p 2>&1 | /usr/bin/grep -I -E "open|Connection refused" | /usr/bin/awk '{print $4}' && echo ""
                 done; wait
 }
 
