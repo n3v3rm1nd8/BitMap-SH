@@ -13,7 +13,7 @@ Primero nos clonamos el repositorio:
 
 Le damos permisos de ejecucion a ambos scripts:
 
-`$ chmod +x SETUP.sh; chmod +x bitmap.sh`
+`$ sudo chmod +x SETUP.sh; chmod +x bitmap.sh`
 
 Nos descargamos las dependencias en el caso de que no las tengamos:
 
@@ -21,4 +21,4 @@ Nos descargamos las dependencias en el caso de que no las tengamos:
 
 Hecho esto, ya podemos usar el script:
 
-`$ ./bitmap.sh --help`
+`$ sudo ./bitmap.sh --help`
