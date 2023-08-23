@@ -53,7 +53,7 @@ function helpPanel(){
 function scanPorts() {
     local start=$1
     local end=$2
-    for p in $(seq $start $end); do
+    for p in $(/usr/bin/seq $start $end); do
         /bin/bash -c "echo '' > /dev/tcp/$ip/$p" &>/dev/null && echo -e "\r${green}[+] $p open${end}" | sed 's/[0-9]\{1,5\}$//' && echo "" | /usr/bin/nc.traditional -v -w 1 $ip $p 2>&1 | /usr/bin/grep -I -E "open|Connection refused" | /usr/bin/awk '{print $4}' && echo ""
     done
 }
