@@ -44,7 +44,7 @@ function helpPanel(){
 
 function Ports(){
                 count=0
-                for p in $(seq 1 65535)
+                for p in $(/usr/bin/seq 1 65535)
                 do
                         count=$((count+1))
                         echo -en "\r${blue}[$count/65535]${end}"
